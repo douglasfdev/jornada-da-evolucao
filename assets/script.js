@@ -73,8 +73,12 @@ function updateUI() {
 
 function renderUpgrades() {
     upgradesListEl.innerHTML = '';
-    const upgradesAtuais = fases[faseAtualIndex].upgrades;
-    upgradesAtuais.forEach(upgrade => {
+    let allUpgrades = [];
+    for (let i = 0; i <= faseAtualIndex; i++) {
+        allUpgrades = allUpgrades.concat(fases[i].upgrades);
+    }
+
+    allUpgrades.forEach(upgrade => {
         const upgradeItem = document.createElement('div');
         upgradeItem.className = 'upgrade-item';
         let upgradeEffect = '';
@@ -96,8 +100,12 @@ function renderUpgrades() {
 }
 
 function buyUpgrade(id) {
-    const upgradesAtuais = fases[faseAtualIndex].upgrades;
-    const upgrade = upgradesAtuais.find(up => up.id === id);
+    let allUpgrades = [];
+    for (let i = 0; i <= faseAtualIndex; i++) {
+        allUpgrades = allUpgrades.concat(fases[i].upgrades);
+    }
+    const upgrade = allUpgrades.find(up => up.id === id);
+
     if (progresso >= upgrade.cost) {
         progresso -= upgrade.cost;
         upgrade.owned++;
