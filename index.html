@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornada Espacial Cliker</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="manifest" href="assets/manifest.json">
+</head>
+<body>
+    <div class="container">
+        <h1>Jornada Espacial Cliker</h1>
+        <div class="game-info">
+            <p>Fase: <span id="fase">Idade da Pedra</span></p>
+            <p>Progresso: <span id="progresso">0</span></p>
+            <p>Prestígio: <span id="prestigio">0</span></p>
+        </div>
+        <div class="main-button-container">
+            <button id="main-button">
+                <img id="main-image" src="https://i.imgur.com/vH1N88k.png" alt="Recurso Principal">
+                <p>Coletar Recurso</p>
+            </button>
+        </div>
+        <div class="upgrades-container">
+            <h2>Upgrades</h2>
+            <div id="upgrades-list"></div>
+        </div>
+        <div class="actions-container">
+            <button id="prestige-button">Resetar para Prestígio</button>
+            <button id="save-button">Salvar Jogo</button>
+        </div>
+    </div>
+    <script src="assets/script.js"></script>
+</body>
+</html>

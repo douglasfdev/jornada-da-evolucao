@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    color: #ffd700;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.main-button-container {
+    margin: 20px 0;
+}
+
+#main-button {
+    background: linear-gradient(145deg, #ff8c00, #ff4500);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+#main-button:active {
+    transform: scale(0.95);
+}
+
+#main-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 5px;
+}
+
+.upgrades-container {
+    background-color: #555;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.upgrade-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #666;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.upgrade-item button {
+    background-color: #008080;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.actions-container {
+    margin-top: 20px;
+}
+
+#prestige-button, #save-button {
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
