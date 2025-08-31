@@ -1,103 +1,195 @@
+:root {
+    --bg-color: #1a1a2e;
+    --card-color: #2c2c42;
+    --text-color: #e0e0e0;
+    --accent-color-1: #e94560;
+    --accent-color-2: #ff7f50;
+    --button-bg: #4e4e6b;
+    --button-hover: #6a6a8a;
+    --prestige-color: #ffd700;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #333;
-    color: #eee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .container {
-    background-color: #444;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
+    background-color: var(--card-color);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+        "header"
+        "main"
+        "upgrades"
+        "prestige"
+        "actions";
 }
 
 h1 {
-    color: #ffd700;
-}
-
-.game-info {
-    display: flex;
-    justify-content: space-around;
+    color: var(--prestige-color);
+    font-size: 2.5em;
     margin-bottom: 20px;
-    font-size: 1.2em;
+    grid-area: header;
 }
 
-.main-button-container {
-    margin: 20px 0;
-}
-
-#main-button {
-    background: linear-gradient(145deg, #ff8c00, #ff4500);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.5em;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
+.game-area {
+    grid-area: main;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
+    gap: 20px;
+}
+
+.main-info {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--accent-color-1);
+    background-color: #3b3b54;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.main-info p span {
+    color: var(--text-color);
+    margin-left: 5px;
+}
+
+#main-button {
+    background: linear-gradient(145deg, var(--accent-color-1), var(--accent-color-2));
+    color: white;
+    border: none;
+    padding: 20px;
+    font-size: 1.5em;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 #main-button:active {
     transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 #main-image {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     margin-bottom: 5px;
 }
 
-.upgrades-container {
-    background-color: #555;
+.upgrades-container, .prestige-upgrades-container, .actions-container {
+    background-color: var(--button-bg);
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 10px;
     margin-top: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.upgrades-container {
+    grid-area: upgrades;
+}
+
+.prestige-upgrades-container {
+    grid-area: prestige;
+}
+
+.actions-container {
+    grid-area: actions;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.section h2 {
+    font-size: 1.5em;
+    color: var(--accent-color-2);
+    margin-bottom: 15px;
 }
 
 .upgrade-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #666;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #3b3b54;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+    border-left: 5px solid var(--accent-color-1);
+}
+
+.upgrade-item:hover {
+    transform: translateY(-3px);
+}
+
+.upgrade-item span {
+    margin-bottom: 5px;
 }
 
 .upgrade-item button {
-    background-color: #008080;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.actions-container {
-    margin-top: 20px;
-}
-
-#prestige-button, #save-button {
-    background-color: #8b0000;
+    align-self: flex-end;
+    background-color: var(--accent-color-1);
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    margin: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.upgrade-item button:hover {
+    background-color: #b3394c;
+}
+
+#prestige-button, #save-button {
+    background-color: var(--prestige-color);
+    color: #1a1a2e;
+    font-weight: bold;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+#prestige-button:hover, #save-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    .container {
+        grid-template-areas:
+            "main upgrades"
+            "main prestige"
+            "actions actions";
+        grid-template-columns: 1fr 1fr;
+    }
 }
